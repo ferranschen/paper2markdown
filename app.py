@@ -86,13 +86,11 @@ def parse_ieee(paper_html):
         title = metadata_json.get('title')
         authors = [author.get('name')
                    for author in metadata_json.get('authors', [])]
-        abstract = metadata_json.get('abstract')
         pdf_link = "https://ieeexplore.ieee.org" + metadata_json.get('pdfPath')
 
         return {
             "title": title,
             "authors": authors,
-            "abstract": abstract,
             "pdf_link": pdf_link,
         }
 

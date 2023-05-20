@@ -20,7 +20,7 @@
     <script>
         let markdown_text = '';
         {% for paper in papers %}
-            markdown_text += "**{{ paper.title }}** {{ paper.authors | join(', ') }} \[[PDF]\]({{ paper.pdf_url }})\n\n";
+            markdown_text += "**{{ paper.title }}** <em>{{ paper.authors | join(', ') }}</em> \[[PDF]\]({{ paper.pdf_url }})\n\n";
         {% endfor %}
         
         let simplemde = new SimpleMDE({ element: document.getElementById('markdown'), status: false });

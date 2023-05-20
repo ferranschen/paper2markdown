@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Paper Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-8">
+                <h2>Markdown</h2>
+                <textarea id="markdown"></textarea>
+                <button class="btn btn-primary mt-2" onclick="copyMarkdown()">Copy Markdown</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let markdown_text = '';
+        {% for paper in papers %}
+            markdown_text += "**{{ paper.title }}** {{ paper.authors | join(', ') }} \[[PDF]\]({{ paper.pdf_url }})\n\n";
+        {% endfor %}
+        
+        let simplemde = new SimpleMDE({ element: document.getElementById('markdown'), status: false });
+        simplemde.value(markdown_text);
+
+        function copyMarkdown() {
+            let textarea = document.createElement('textarea');
+            textarea.value = simplemde.value();
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+        }
+    </script>
+</body>
+</html>

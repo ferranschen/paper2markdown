@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Paper Parser</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <h2>Paper2Markdown</h2>
+                <form action="/result" method="post">
+                    <div id="inputList">
+                        <div class="form-group input-group">
+                            <input type="text" class="form-control" name="paper_url" placeholder="Enter Paper URL" required>
+                            <div class="input-group-append">
+                                <button class="btn btn-danger removeInput" type="button">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="addInput">Add another paper</button><br>
+                    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("addInput").addEventListener("click", function() {
+            var newInput = document.createElement("div");
+            newInput.innerHTML = '<div class="form-group input-group"><input type="text" class="form-control" name="paper_url" placeholder="Enter Paper URL" required><div class="input-group-append"><button class="btn btn-danger removeInput" type="button">Remove</button></div></div>';
+            document.getElementById("inputList").appendChild(newInput);
+        });
+
+        document.getElementById("inputList").addEventListener("click", function(e) {
+            if (e.target && e.target.classList.contains("removeInput")) {
+                e.target.closest(".input-group").remove();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -7,6 +7,15 @@ Paper2Markdown is a Python-based tool designed to simplify the process of organi
 
 ![Demo GIF](./demo.gif)
 
+Examples of paper's markfown format:
+
+**LevelUp – Automatic Assessment of Block-Based Machine Learning Projects for AI Education** <em>Tejal Reddy, Randi Williams, Cynthia Breazeal</em> [[PDF]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=9833130)
+
+**“What It Wants Me To Say”: Bridging the Abstraction Gap Between End-User Programmers and Code-Generating Large Language Models** <em>Michael Xieyang Liu, Advait Sarkar, Carina Negreanu, Benjamin Zorn, Jack Williams, Neil Toronto, Andrew D. Gordon</em> [[PDF]](https://dl.acm.org/doi/pdf/10.1145/3544548.3580817)
+
+
+
+
 ## Dependencies
 The project has several dependencies that require installation:
 - Python 3.6 or higher

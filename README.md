@@ -41,7 +41,7 @@ cd paper2markdown
 4. Install the required Python dependencies.
 Once you have installed the dependencies, you can run the Flask app:
 ```bash
-python app.py
+python3 app.py
 ```
 Then navigate to the provided URL in your web browser (for example, http://127.0.0.1:5000/ or another IP address that appears in the terminal). You will see a web interface where you can enter the URL of the paper you want to fetch details for.
 

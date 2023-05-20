@@ -3,6 +3,10 @@
 ## Introduction
 Paper2Markdown is a Python-based tool designed to simplify the process of organizing academic papers. It allows you to fetch essential details about papers from different academic repositories like Arxiv, IEEE Xplore, and ACM, by simply entering the paper's URL. The tool retrieves the paper's title, authors, and PDF link and presents them in a convenient markdown format.
 
+## Demo
+
+![Demo GIF](./demo.gif)
+
 ## Dependencies
 The project has several dependencies that require installation:
 - Python 3.6 or higher

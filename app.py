@@ -78,25 +78,5 @@ def result():
     return render_template('result.html', papers=papers)
 
 
-def parse_ieee(paper_html):
-    metadata = re.search(r'xplGlobal\.document\.metadata=(.*?);', paper_html)
-    if metadata:
-        metadata_json = json.loads(metadata.group(1))
-
-        title = metadata_json.get('title')
-        authors = [author.get('name')
-                   for author in metadata_json.get('authors', [])]
-        pdf_link = "https://ieeexplore.ieee.org" + metadata_json.get('pdfPath')
-
-        return {
-            "title": title,
-            "authors": authors,
-            "pdf_link": pdf_link,
-        }
-
-    else:
-        return None
-
-
 if __name__ == "__main__":
     app.run(debug=True)
